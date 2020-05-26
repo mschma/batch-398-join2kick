@@ -3,6 +3,8 @@
 
 <ul>
   <% @pitches.each do |pitch| %>
-  <li> <%= pitch.name %></li>
+  <% if policy(pitch).index? %>
+    <li> <%= pitch.name link_to "See more", pitch_path(pitch) %></li>
+    <% end %>
   <% end %>
 </ul>
