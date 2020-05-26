@@ -7,14 +7,11 @@
         <input submit>
       </form>
     </div> -->
- <div class="container">
+<div class="container">
 
-  <p>Are you logged in?</p>
-  <% if user_signed_in? %>
-    <p>Yes, you are logged in!</p>
-  <% else %>
-    <p>go home!</p>
+  <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
   <% end %>
-  </div>
 </div>
 
