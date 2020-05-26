@@ -2,10 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
+<<<<<<< HEAD
+# authorization
+gem 'pundit'
+=======
 
 # store for security
 gem 'dotenv-rails', groups: [:development, :test]
 
+>>>>>>> 8f87f4ebb16fd9af0889a01a91628a98cabc46b4
 # login devise
 gem "devise"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
