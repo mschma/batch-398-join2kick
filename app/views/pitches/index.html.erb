@@ -1,2 +1,9 @@
 <h1>Pitches#index</h1>
 <p>Find me in app/views/pitches/index.html.erb</p>
+
+
+<% @pitches.each do |pitch| %>
+  <% if policy(pitch).index? %>
+    <%= link_to "See more", pitch_path(pitch) %>
+  <% end %>
+<% end %>
