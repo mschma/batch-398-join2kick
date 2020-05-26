@@ -1,4 +1,4 @@
-.background {
+.banner {
   color: white;
   text-align: center;
   height: 100vh;
@@ -8,4 +8,5 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  z-index: 1;
 }
