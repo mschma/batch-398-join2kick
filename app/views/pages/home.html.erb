@@ -7,7 +7,14 @@
         <input submit>
       </form>
     </div> -->
-  <div class="container">
+ <div class="container">
 
+  <p>Are you logged in?</p>
+  <% if user_signed_in? %>
+    <p>Yes, you are logged in!</p>
+  <% else %>
+    <p>go home!</p>
+  <% end %>
   </div>
 </div>
+
