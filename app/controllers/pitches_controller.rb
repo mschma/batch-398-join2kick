@@ -1,10 +1,20 @@
 class PitchesController < ApplicationController
   def index
-    @pitches = policy_scope(Pitch).order(created_at: :desc)
+    #skip_authorization
+    @pitches = policy_scope(Pitch).geocoded.order(created_at: :desc)
+    authorize @pitches
     @search = params["search"]
     if @search.present?
-      @name = @search["name"]
-      @pitches = Pitch.where(name: @name)
+      @address = @search["address"]
+      @pitches = @pitches.where(address: @address)
+    end
+
+    # @pitches = Pitch.geocoded
+    @markers = @pitches.map do |pitch|
+      {
+        lat: pitch.latitude,
+        lng: pitch.longitude
+      }
     end
   end
 
