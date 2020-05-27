@@ -1,4 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-dark fixed-top navbar-lewagon">
+<% if user_signed_in? %>
+  <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-dark fixed-top navbar-lewagon">
+<% end %>
   <%= link_to image_tag("https://res.cloudinary.com/dgwgea5k3/image/upload/v1590527952/Logo_qduyig.gif", width: "175"), root_path %>
   <!-- <a class="navbar-brand" href="#"> -->
     <!-- <img src="https://res.cloudinary.com/dgwgea5k3/image/upload/v1590527952/Logo_qduyig.gif" /> -->
@@ -9,17 +13,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+          <%= link_to "Bookings", bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

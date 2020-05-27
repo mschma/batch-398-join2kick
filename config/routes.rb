@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :pitches, only: [:index, :show] do
     resources :bookings, except: [:destroy]
   end
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: [:index, :destroy]
 end
