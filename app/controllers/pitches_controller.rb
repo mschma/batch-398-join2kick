@@ -1,6 +1,6 @@
 class PitchesController < ApplicationController
   def index
-    @pitches = Pitch.all
+    @pitches = policy_scope(Pitch).order(created_at: :desc)
     @search = params["search"]
     if @search.present?
       @name = @search["name"]

@@ -4,7 +4,7 @@
 <ul>
   <% @pitches.each do |pitch| %>
   <% if policy(pitch).index? %>
-    <li> <%= pitch.name link_to "See more", pitch_path(pitch) %></li>
+    <li> <%= pitch.name %> <%= link_to "See more", pitch_path(pitch) %></li>
     <% end %>
   <% end %>
 </ul>
