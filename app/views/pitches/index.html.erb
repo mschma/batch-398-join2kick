@@ -1,16 +1,20 @@
-<tbody>
-<% @pitches.each do |pitch| %>
-  <tr>
-    <% if policy(pitch).index? %>
-      <td> <%= pitch.name %> <%= link_to "See more", pitch_path(pitch) %></td>
-      <% end %>
+<div class="content">
+  <ul>
+    <% @pitches.each do |pitch| %>
+      <div class="card">
+        <% if policy(pitch).index? %>
+          <li> <%= pitch.name %> <%= link_to "", pitch_path(pitch), class: 'card-link' %></li>
+        <% end %>
+      </div>
     <% end %>
-  </tr>
-</tbody>
+  </ul>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 
+</div>
 

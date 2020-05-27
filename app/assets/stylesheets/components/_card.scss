@@ -1,0 +1,23 @@
+.card {
+  height: 100px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(21, 20, 20, 0.74);
+  border: none;
+  list-style-type: none;
+  margin-bottom: 5px;
+
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  }
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  background: transparent;
+}
