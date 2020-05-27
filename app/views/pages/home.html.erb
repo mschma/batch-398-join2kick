@@ -1,10 +1,27 @@
-<%= render "shared/background_image" %>
+<% if user_signed_in? %>
 
 <div class="container">
 
-  <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :address %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
+<!-- here show all bookings and implement the website, home if sign in -->
+
+
 </div>
+
+
+
+
+
+<% else %>
+
+  <%= render "shared/background_image" %>
+
+  <div class="container">
+
+    <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :address %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+<% end %>
 
