@@ -1,11 +1,12 @@
-.background {
+.banner {
   color: white;
   text-align: center;
   height: 100vh;
   background-size: cover;
-  background-position: top;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  z-index: 1;
 }
