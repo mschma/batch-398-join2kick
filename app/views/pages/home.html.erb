@@ -1,6 +1,5 @@
 <% if user_signed_in? %>
 
-<div class="container">
 
 <!-- here show all bookings and implement the website, home if sign in -->
   <!-- Here just for test purpose later in the header -->
@@ -12,21 +11,27 @@
       <% end %>
   </div>
 
-<!-- <tbody>
-  <#% @bookings.each do |booking| %>
+  <div class="container">
+    <h1>All Bookings</h1>
+  <tbody>
+    <% @pitches.each do |pitch| %>
     <tr>
-      <#% if policy(booking).index? %>
-        <td> <%#= booking.pitch.name %> <%#= link_to "See more", booking_path(booking) %></td>
+      <% if policy(pitch).index? %>
+        <td> <%= pitch.name %> <%#= link_to "See more", booking_path(booking) %></td>
         <td> <%#= booking.pitch.address %> <%#= link_to "See more", booking_path(booking) %></td>
         <td> <%#= booking.start_date %> <%#= link_to "See more", booking_path(booking) %></td>
         <td> <%#= booking.end_date %> <%#= link_to "See more", booking_path(booking) %></td>
-        <#% end %>
-      <#% end %>
+        <% end %>
+      <div class="card-home" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <% end %>
     </tr>
   </tbody>
-</div>
- -->
-
+  </div>
 
 
 
