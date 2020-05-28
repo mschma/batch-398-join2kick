@@ -1,2 +1,4 @@
-<h2><%= pitch.name %></h2>
-<p><%= pitch.price %></p>
+<div>
+  <h4><%=pitch.name%><%=link_to "", pitch_path(pitch), class: 'card-link'%></h4>
+  <h5><%= pitch.price %> €</h5>
+</div>
