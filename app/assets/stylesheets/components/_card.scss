@@ -44,6 +44,10 @@
       font-weight: bold;
       padding-right: 20px;
     }
+    &:hover {
+    transform: scale(1.02);
+    transition: 0.2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  }
 }
 
 .card-pitch-price {
@@ -56,19 +60,18 @@
 
 }
 
-// .card-link {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-//   width: 100%;
-//   z-index: -1;
-//   background: transparent;
-// }
-
-@media (max-width: 615px) {
-  .card-pitch-description {
-    grid-template-columns: 1fr;
-  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: transparent;
 }
+
+// @media (max-width: 615px) {
+//   .card-pitch-description {
+//     grid-template-columns: 1fr;
+//   }
+// }
 

@@ -13,6 +13,7 @@
               <h3><%= pitch.price %> €</h3>
             </div>
           </div>
+          <%= link_to "", pitch_path(pitch), class: 'card-link' %>
         <% end %>
       </div>
     <% end %>
@@ -25,4 +26,3 @@
   </div>
 </div>
 
-<%#= link_to "", pitch_path(pitch), class: 'card-link'
