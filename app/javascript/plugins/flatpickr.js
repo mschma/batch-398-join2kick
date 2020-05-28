@@ -6,4 +6,4 @@ flatpickr(".datepicker", {
   minDate: "today",
   dateFormat: "d-m-Y",
   "plugins": [new rangePlugin({ input: "#secondRangeInput"})]
-})
+});
