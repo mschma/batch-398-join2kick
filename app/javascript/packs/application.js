@@ -2,6 +2,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+import "../plugins/flatpickr";
 
 // External imports
 import "bootstrap";
