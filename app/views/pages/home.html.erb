@@ -16,11 +16,11 @@
   <tbody>
     <% @pitches.each do |pitch| %>
     <tr>
-      <% if policy(pitch).index? %>
-        <td> <%= pitch.name %> <%#= link_to "See more", booking_path(booking) %></td>
-        <td> <%#= booking.pitch.address %> <%#= link_to "See more", booking_path(booking) %></td>
-        <td> <%#= booking.start_date %> <%#= link_to "See more", booking_path(booking) %></td>
-        <td> <%#= booking.end_date %> <%#= link_to "See more", booking_path(booking) %></td>
+      <% if policy(bookings).index? %>
+        <td> <%= booking.name %> <%= link_to "See more", booking_path(booking) %></td>
+        <td> <%= booking.pitch.address %> <%= link_to "See more", booking_path(booking) %></td>
+        <td> <%= booking.start_date %> <%= link_to "See more", booking_path(booking) %></td>
+        <td> <%= booking.end_date %> <%= link_to "See more", booking_path(booking) %></td>
         <% end %>
       <div class="card-home" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
