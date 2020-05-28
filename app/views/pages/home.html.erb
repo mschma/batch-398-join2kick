@@ -14,21 +14,17 @@
   <div class="container">
     <h1>All Bookings</h1>
   <tbody>
-    <% @pitches.each do |pitch| %>
+    <% @bookings.each do |booking| %>
     <tr>
-      <% if policy(bookings).index? %>
-        <td> <%= booking.name %> <%= link_to "See more", booking_path(booking) %></td>
-        <td> <%= booking.pitch.address %> <%= link_to "See more", booking_path(booking) %></td>
-        <td> <%= booking.start_date %> <%= link_to "See more", booking_path(booking) %></td>
-        <td> <%= booking.end_date %> <%= link_to "See more", booking_path(booking) %></td>
-        <% end %>
-      <div class="card-home" style="width: 18rem;">
+      <div class="card-home">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <% if policy(booking).index? %>
+        <td><%= booking.pitch.name %> <%= link_to "See more", pitch_booking_path(booking.pitch_id, booking) %></td>
+        <% end %>
         </div>
       </div>
-      <% end %>
+     <% end %>
     </tr>
   </tbody>
   </div>

@@ -1,14 +1,16 @@
 .card-home {
-  overflow: hidden;
+  width: auto;
+  border-radius: 5px;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
 }
 
 .card-home img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
 }
+
