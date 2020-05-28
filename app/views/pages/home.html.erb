@@ -21,6 +21,7 @@
         <div class="card-body">
           <% if policy(booking).index? %>
         <td><%= booking.pitch.name %> <%= link_to "See more", pitch_booking_path(booking.pitch_id, booking) %></td>
+        <td><%= booking.pitch.name %> <%= link_to "Delete", booking_path(booking), method: :delete %></td>
         <% end %>
         </div>
       </div>
