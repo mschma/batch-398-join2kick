@@ -5,10 +5,12 @@
         <% if policy(pitch).index? %>
           <img src="<%= pitch.picture %>" alt="">
           <div class="card-pitch-description">
-            <p><%= pitch.name %></p>
-            <p><%= pitch.address %></p>
+            <div>
+              <h1><%= pitch.name %></h1>
+              <p id="address"><%= pitch.address %></p>
+            </div>
             <div class="card-pitch-price">
-              <p><%= pitch.price %></p>
+              <h3><%= pitch.price %> €</h3>
             </div>
           </div>
         <% end %>
@@ -17,7 +19,7 @@
   </div>
 
   <div id="map"
-    style="width: 100%; height: 600px;"
+    style="width: 100%; height: 100vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>

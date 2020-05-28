@@ -3,26 +3,29 @@
 <div class="container">
 
   <h2>Sign up</h2>
-
+  <br>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs" style="width: 450px; margin: 0 auto;">
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  label: false,
+                  input_html: { autocomplete: "email", placeholder: "E-Mail", style: "margin-bottom: 35px;" }%>
       <%= f.input :password,
                   required: true,
+                  label: false,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
+                  input_html: { autocomplete: "new-password", placeholder: "Password" } %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password" } %>
+                  label: false,
+                  input_html: { autocomplete: "new-password", placeholder: "Confirm password", style: "margin-bottom: 35px;" } %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+      <%= f.button :submit, "Sign up", class: "button", style: "margin-bottom: 15px;" %>
     </div>
   <% end %>
 

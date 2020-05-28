@@ -4,25 +4,56 @@
 
 .card-pitch {
   display: flex;
+  overflow: hidden;
   background: white;
-  height: 100px;
-  margin-bottom: 55px;
-
-  .card-pitch-description {
-    p {
-      font-size: 10px;
-    }
-  }
+  height: 200px;
+  margin-bottom: 2px;
+  margin-right: 5px;
 
   img {
     height: 100%;
-    width: 100px;
+    width: 125px;
     object-fit: cover;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
   }
   &:hover {
     transform: scale(1.02);
     transition: 0.2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   }
+}
+
+.card-pitch-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    // flex-shrink: 1;
+    margin-top: 15px;
+    margin-left: 15px;
+    h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+    p {
+      font-size: 12px;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      padding-right: 20px;
+    }
+}
+
+.card-pitch-price {
+  position: relative;
+  h3 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
 }
 
 // .card-link {
@@ -34,4 +65,10 @@
 //   z-index: -1;
 //   background: transparent;
 // }
+
+@media (max-width: 615px) {
+  .card-pitch-description {
+    grid-template-columns: 1fr;
+  }
+}
 
