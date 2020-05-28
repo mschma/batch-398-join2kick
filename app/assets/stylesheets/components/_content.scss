@@ -1,0 +1,25 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  ul {
+   padding-left: 4px;
+  }
+  z-index: 100;
+}
+
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: -5;
+}
+
+@media (max-width: 540px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: none;
+  }
+}

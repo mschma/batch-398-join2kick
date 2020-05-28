@@ -6,7 +6,7 @@ class PitchesController < ApplicationController
     @search = params["search"]
     if @search.present?
       @address = @search["address"]
-      @pitches = @pitches.where(address: @address)
+      @pitches = Pitch.near(@address, 50)
     end
 
     # @pitches = Pitch.geocoded

@@ -1,10 +1,46 @@
-<%= render "shared/background_image" %>
+<% if user_signed_in? %>
 
 <div class="container">
 
-  <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-    <%= f.input :address %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
+<!-- here show all bookings and implement the website, home if sign in -->
+  <!-- Here just for test purpose later in the header -->
+  <div class="container">
+
+      <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :address %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+
+<!-- <tbody>
+  <#% @bookings.each do |booking| %>
+    <tr>
+      <#% if policy(booking).index? %>
+        <td> <%#= booking.pitch.name %> <%#= link_to "See more", booking_path(booking) %></td>
+        <td> <%#= booking.pitch.address %> <%#= link_to "See more", booking_path(booking) %></td>
+        <td> <%#= booking.start_date %> <%#= link_to "See more", booking_path(booking) %></td>
+        <td> <%#= booking.end_date %> <%#= link_to "See more", booking_path(booking) %></td>
+        <#% end %>
+      <#% end %>
+    </tr>
+  </tbody>
 </div>
+ -->
+
+
+
+
+<% else %>
+
+  <%= render "shared/background_image" %>
+
+  <div class="container">
+
+    <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= f.input :address %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+<% end %>
 
