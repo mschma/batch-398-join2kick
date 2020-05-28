@@ -3,14 +3,14 @@
 </div>
 <div>
   <div class="text-center">
-    <h2>Your datas</h2>
+    <h2>Your data</h2>
   </div>
   <div class="container">
     <div>
-      <h3> <%= @pitch.price %> €</h3>
+      <h3>Total <%= @pitch.price %> €</h3>
     </div>
     <div>
-      <%= simple_form_for :search, url: pitch_bookings_path(@pitch), method: "POST", html: { class: 'form-inline' } do |f| %>
+      <%= simple_form_for :booking, url: pitch_bookings_path(@pitch), method: "POST", html: { class: 'form-inline' } do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.submit "Book", class: "btn btn-primary" %>

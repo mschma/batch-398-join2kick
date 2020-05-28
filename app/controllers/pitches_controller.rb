@@ -13,7 +13,8 @@ class PitchesController < ApplicationController
     @markers = @pitches.map do |pitch|
       {
         lat: pitch.latitude,
-        lng: pitch.longitude
+        lng: pitch.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { pitch: pitch })
       }
     end
   end
