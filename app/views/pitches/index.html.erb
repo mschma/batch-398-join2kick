@@ -12,9 +12,10 @@
             <div class="card-pitch-price">
               <h3><%= pitch.price %> €</h3>
             </div>
+
           </div>
-          <%= link_to "", pitch_path(pitch), class: 'card-link' %>
         <% end %>
+        <%= link_to "", pitch_path(pitch), class: 'card-link-to-pitch' %>
       </div>
     <% end %>
   </div>
