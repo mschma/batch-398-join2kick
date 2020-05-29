@@ -1,21 +1,25 @@
 <div class="banner_show" style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.43)), url(<%= @pitch.picture %>)">
-<h2> <%= @pitch.name %> </h2>
+  <h2> <%= @pitch.name %> </h2>
 </div>
 <div>
-  <div class="text-center mb-5">
+  <div class="text-center">
     <h2>Your data</h2>
   </div>
   <div class="container" style="height: 800px;">
 
-    <div class="search-bar mb-5">
-      <%= simple_form_for :booking, url: pitch_bookings_path(@pitch), method: "POST", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin-right: 35px;"}  %>
-      <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin-right: 35px;", id: "secondRangeInput"} %>
-      <%= f.submit "Book", class: "button" %>
-      <% end %>
+    <div class="search-bar">
+      <div>
+        <%= simple_form_for :booking, url: pitch_bookings_path(@pitch), method: "POST", html: { class: 'form-inline justify-content: center' } do |f| %>
+        <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin: 10px;"}  %>
+        <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin: 10px;", id: "secondRangeInput"} %>
+      </div>
     </div>
     <div class="text-center">
       <h3>Total <%= @pitch.price %> €</h3>
+    </div>
+    <div class="text-center">
+      <%= f.submit "Book", class: "button" %>
+      <% end %>
     </div>
   </div>
 </div>
