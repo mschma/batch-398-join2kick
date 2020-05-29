@@ -4,8 +4,8 @@
   <div class="container">
 
       <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :address %>
-        <%= f.submit "Search", class: "btn btn-primary" %>
+        <%= f.input :address, label: false, input_html: {size: 50} %>
+        <%= f.submit "Search", class: "button", style: "margin-left: 25px;" %>
       <% end %>
   </div>
 
@@ -23,13 +23,12 @@
             <div class="card-home-info">
               <%= booking.pitch.name %>
               <div class="home-link">
-                <%= link_to "See more", pitch_booking_path(booking.pitch_id, booking) %>
+                <p><%= booking.pitch.name %> <%= link_to '<i class=“fas fa-trash-alt”></i>’.html_safe, booking_path(booking), method: :delete %></p>
               </div>
             <% end %>
             </div>
           </div>
         <% end %>
-
     </div>
   </div>
   </div>
@@ -41,10 +40,13 @@
   <%= render "shared/background_image" %>
 
   <div class="container">
-
+    <div class="header-landing">
+      <h1>No idea where to play football?</h1>
+      <h2>Bock your pitch with just few clicks!</h2>
+    </div>
     <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :address %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
+      <%= f.input :address, label: false, input_html: {size: 50} %>
+      <%= f.submit "Search", class: "button", style: "margin-left: 25px;" %>
     <% end %>
   </div>
 
