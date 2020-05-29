@@ -2,37 +2,37 @@
 <% if user_signed_in? %>
 
   <div class="container">
-
       <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :address, label: false, input_html: {size: 50} %>
-        <%= f.submit "Search", class: "button", style: "margin-left: 25px;" %>
+      <%= f.input :address, label: false, input_html: {size: 50} %>
+      <%= f.submit "Search", class: "button", style: "margin-left: 25px;" %>
       <% end %>
   </div>
 
-  <div class="container1">
+
     <h1 class="h1">Your Bookings</h1>
-  <div>
-
     <div class="cards-home">
-      <% @bookings.each do |booking| %>
-        <% if policy(booking).index? %>
+        <% @bookings.each do |booking| %>
 
-          <div class="card-home">
+          <% if policy(booking).index? %>
+            <div class="card-home">
+              <img src="<%= booking.pitch.picture %>" class="card-img1" alt="">
 
-            <img src="<%= booking.pitch.picture %>" class="card-img1" alt="">
-            <div class="card-home-info">
-              <%= booking.pitch.name %>
-              <div class="home-link">
-                <p><%= booking.pitch.name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete %></p>
+              <div class="card-home-info">
+                <h3><%= booking.pitch.name %></h3>
+                <p><%= booking.pitch.address %></p>
+                <div class="card-home-delete">
+                  <p><i class="far fa-calendar-alt"></i>  <%= booking.start_date %><!-- <br> To: <%= booking.end_date %> --></p>
+                  <p><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} %></p>
+                </div>
+                <p class="price"><%= booking.pitch.price %>€</p>
+
               </div>
-            <% end %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+      <% end %>
     </div>
-  </div>
-  </div>
 
+</div>
 
 
 <% else %>
