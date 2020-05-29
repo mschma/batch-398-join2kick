@@ -2,19 +2,20 @@
 <h2> <%= @pitch.name %> </h2>
 </div>
 <div>
-  <div class="text-center">
+  <div class="text-center mb-5">
     <h2>Your data</h2>
   </div>
-  <div class="container">
-    <div>
-      <h3>Total <%= @pitch.price %> €</h3>
-    </div>
-    <div>
+  <div class="container" style="height: 800px;">
+
+    <div class="search-bar mb-5">
       <%= simple_form_for :booking, url: pitch_bookings_path(@pitch), method: "POST", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}  %>
-      <%= f.input :end_date, as: :string, input_html: {class: "datepicker", id: "secondRangeInput"} %>
-      <%= f.submit "Book", class: "btn btn-primary" %>
+      <%= f.input :start_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin-right: 35px;"}  %>
+      <%= f.input :end_date, as: :string, label: false, input_html: {class: "datepicker", style: "margin-right: 35px;", id: "secondRangeInput"} %>
+      <%= f.submit "Book", class: "button" %>
       <% end %>
+    </div>
+    <div class="text-center">
+      <h3>Total <%= @pitch.price %> €</h3>
     </div>
   </div>
 </div>

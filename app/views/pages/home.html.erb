@@ -1,7 +1,7 @@
 <div class="background" style="height: 100vh">
 <% if user_signed_in? %>
 
-  <div class="container">
+  <div class="search-bar">
       <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
       <%= f.input :address, label: false, input_html: {size: 50} %>
       <%= f.submit "Search", class: "button", style: "margin-left: 25px;" %>
