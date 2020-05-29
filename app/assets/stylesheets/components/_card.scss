@@ -17,6 +17,7 @@
     padding-left: 10px;
     padding-bottom: 10px;
   }
+
 }
 .card-pitch-description {
     display: grid;
@@ -50,14 +51,13 @@
 
 }
 
-.card-link {
+.card-link-to-pitch {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
+  height: 100%;
   width: 100%;
   background: transparent;
 }
+
 
 // @media (max-width: 615px) {
 //   .card-pitch-description {
