@@ -1,3 +1,4 @@
+Booking.destroy_all
 Pitch.destroy_all
 User.destroy_all
 user = User.create(email: "bob@gmail.com", password: "123456")
