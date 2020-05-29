@@ -41,16 +41,17 @@
 }
 
 .price {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-home-delete {
-  display: flex;
-  justify-content: space-between;
+  text-align: right;
   i {
     color: black;
     &:hover {
       opacity: 0.6;
+      color: red;
     }
   }
 }

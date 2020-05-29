@@ -20,12 +20,11 @@
               <div class="card-home-info">
                 <h3><%= booking.pitch.name %></h3>
                 <p><%= booking.pitch.address %></p>
-                <div class="card-home-delete">
+                <div class="price">
                   <p><i class="far fa-calendar-alt"></i>  <%= booking.start_date %><!-- <br> To: <%= booking.end_date %> --></p>
-                  <p><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} %></p>
+                  <p><%= booking.pitch.price %>€</p>
                 </div>
-                <p class="price"><%= booking.pitch.price %>€</p>
-
+                <p class="card-home-delete"><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} %></p>
               </div>
             </div>
           <% end %>
