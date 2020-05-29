@@ -1,0 +1,1 @@
+import '../plugins/init_mapbox';
