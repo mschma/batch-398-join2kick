@@ -1,8 +1,6 @@
+<div class="background" style="height: 100vh">
 <% if user_signed_in? %>
 
-
-<!-- here show all bookings and implement the website, home if sign in -->
-  <!-- Here just for test purpose later in the header -->
   <div class="container">
 
       <%= simple_form_for :search, url: pitches_path, method: "GET", html: { class: 'form-inline' } do |f| %>
@@ -11,23 +9,28 @@
       <% end %>
   </div>
 
-  <div class="container">
-    <h1>All Bookings</h1>
-  <tbody>
-    <% @bookings.each do |booking| %>
-    <tr>
-      <div class="card-home">
-        <img src="<%= booking.pitch.picture %>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <% if policy(booking).index? %>
-        <td><%= booking.pitch.name %> <%= link_to "See more", pitch_booking_path(booking.pitch_id, booking) %></td>
-        <td><%= booking.pitch.name %> <%= link_to "Delete", booking_path(booking), method: :delete %></td>
+  <div class="container1">
+    <h1 class="h1">Your Bookings</h1>
+  <div>
+
+    <div class="cards-home">
+      <% @bookings.each do |booking| %>
+        <% if policy(booking).index? %>
+
+          <div class="card-home">
+
+            <img src="<%= booking.pitch.picture %>" class="card-img1" alt="">
+            <div class="card-home-info">
+              <%= booking.pitch.name %>
+              <div class="home-link">
+                <p><%= booking.pitch.name %> <%= link_to '<i class=“fas fa-trash-alt”></i>’.html_safe, booking_path(booking), method: :delete %></p>
+              </div>
+            <% end %>
+            </div>
+          </div>
         <% end %>
-        </div>
-      </div>
-     <% end %>
-    </tr>
-  </tbody>
+    </div>
+  </div>
   </div>
 
 
@@ -48,4 +51,5 @@
   </div>
 
 <% end %>
+</div>
 
