@@ -25,7 +25,7 @@ MutableConstant:
   Enabled: false
 SignalException:
   Enabled: false
-Casecmp:
+Style/EmptyCaseCondition:
   Enabled: false
 CyclomaticComplexity:
   Enabled: false
@@ -35,7 +35,7 @@ MethodMissingSuper:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
-LineLength:
+Layout/LineLength:
   Max: 120
 Style/EmptyMethod:
   Enabled: false
